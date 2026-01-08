@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typing Analytics</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+  <header>
+    <h1>Typing Analytics</h1>
+    <p>Track your typing performance over time</p>
+  </header>
+
+  <!-- Input Card -->
+  <div class="card glass">
+    <h2>Add Result</h2>
+    <div class="grid">
+      <input id="wpm" placeholder="WPM">
+      <input id="keystrokes" placeholder="Keystrokes">
+      <input id="accuracy" placeholder="Accuracy %">
+      <input id="correct" placeholder="Correct">
+      <input id="wrong" placeholder="Wrong">
+    </div>
+    <button onclick="addStat()">Add Statistic</button>
+  </div>
+
+  <!-- Actions -->
+  <div class="actions">
+    <button class="secondary" onclick="exportCSV()">Export Excel</button>
+    <button class="ghost" onclick="toggleLanguage()">TH / EN</button>
+  </div>
+
+  <!-- Chart -->
+  <div class="card glass">
+    <canvas id="chart"></canvas>
+  </div>
+
+  <!-- Table -->
+  <div class="card glass">
+    <h2>History</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>WPM</th>
+          <th>Keys</th>
+          <th>Accuracy</th>
+          <th>Correct</th>
+          <th>Wrong</th>
+        </tr>
+      </thead>
+      <tbody id="history"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
